@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      html,
+      body {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      #gameScreen {
+        display: block;
+        position: absolute;
+        top: 0;
+        margin: 0;
+        padding: 0;
+        left: 0;
+      }
+      #left_touch {
+        width: 200px;
+        height: 100%;
+        z-index: 10;
+        margin-top: 60px;
+      }
+      #right_touch {
+        width: 200px;
+        height: 100%;
+        z-index: 10;
+        margin-top: 60px;
+      }
+      #center_touch {
+        width: 100%;
+        height: 100%;
+        z-index: 10;
+        margin-top: 60px;
+      }
+      #pause_img {
+        width: 40px;
+        height: 40px;
+        margin: 8px;
+        z-index: 8;
+      }
+      #lives {
+        margin-right: 10px;
+      }
+      #lives_img {
+        width: 40px;
+        height: 40px;
+        margin: 8px;
+      }
+      #head {
+        display: flex;
+        justify-content: space-between;
+        padding: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div style="position: relative" id="body">
+      <div id="head">
+        <div style="display: flex; align-items: center">
+          <img src="assets/images/pngwing.com.png" alt="" id="lives_img" />
+          <p id="lives">3</p>
+          <p id="score"></p>
+        </div>
+        <img
+          src="assets/images/windows-media-player-pause-button.png"
+          alt=""
+          id="pause_img" />
+      </div>
+      <span style="width: 100%; display: flex; height: 100vh; overflow: hidden">
+        <span id="left_touch"></span>
+        <div id="center_touch"></div>
+        <div id="right_touch"></div>
+      </span>
+    </div>
+    <canvas id="gameScreen"></canvas>
+
+    <script type="module" src="index.js"></script>
+  </body>
+</html>
