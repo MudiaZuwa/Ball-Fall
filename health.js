@@ -37,6 +37,7 @@ export default class extraHealth {
         document.getElementById("lives").innerText = this.game.lives;
       }
     }
+    
     if (this.position.y + this.height < 0) {
       this.markedForDeletion = true;
     }

@@ -13,6 +13,7 @@ export default class Paddle {
     };
   }
   draw(ctx) {
+    this.width = this.game.gameWidth > 480 ? 120 : this.game.gameWidth / 4;
     ctx.fillStyle = "#0ff";
     ctx.fillRect(this.position.x, this.position.y, this.width, this.height);
   }

@@ -4,8 +4,6 @@ export default class Ball {
     ballImage.src = "./assets/images/PngItem_2373133.png";
     this.image = ballImage;
     this.size = 16;
-    this.gameWidth = game.gameWidth;
-    this.gameHeight = game.gameHeight;
     this.game = game;
     this.maxSpeed = 10;
     this.reset();
@@ -13,8 +11,8 @@ export default class Ball {
 
   reset() {
     this.position = {
-      x: this.gameWidth / 2 - this.size / 2,
-      y: this.gameHeight / 2 - this.size / 2,
+      x: this.game.gameWidth / 2 - this.size / 2,
+      y: this.game.gameHeight / 2 - this.size / 2,
     };
     this.speed = { x: 0, y: 0 };
   }
@@ -48,7 +46,7 @@ export default class Ball {
       this.game.gamestate = 5;
     }
     //wall on bottom{
-    if (this.position.y + this.size > this.gameHeight) {
+    if (this.position.y + this.size > this.game.gameHeight) {
       this.game.lives -= 1;
       document.getElementById("lives").innerText = this.game.lives;
       this.reset();
@@ -56,7 +54,7 @@ export default class Ball {
     }
     if (this.position.x < 0) this.position.x = 0;
 
-    if (this.position.x + this.size > this.gameWidth)
-      this.position.x = this.gameWidth - this.size;
+    if (this.position.x + this.size > this.game.gameWidth)
+      this.position.x = this.game.gameWidth - this.size;
   }
 }

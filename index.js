@@ -10,6 +10,7 @@ let game = new Game(GAME_WIDTH, GAME_HEIGHT);
 
 let lastTime = 0;
 window.addEventListener("resize", resizeCanvas, false);
+
 function resizeCanvas() {
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
@@ -21,7 +22,7 @@ resizeCanvas();
 function gameloop(timestamp) {
   let deltaTime = timestamp - lastTime;
   lastTime = timestamp;
-  ctx.clearRect(0, 0, GAME_WIDTH, GAME_HEIGHT);
+  ctx.clearRect(0, 0, game.gameWidth, game.gameHeight);
   game.update(deltaTime);
   game.draw(ctx);
 
